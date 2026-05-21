@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   ShieldCheck,
   Plane,
@@ -95,14 +96,26 @@ export default function HomePage() {
       </section>
 
       {/* ── Services overview ── */}
-      <section className="relative bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 py-20 overflow-hidden">
-        <div className="absolute inset-0 pattern-dots" />
+      <section className="relative py-24 overflow-hidden">
+        {/* Background photo — Toronto/Canadian skyline */}
+        <Image
+          src="https://images.unsplash.com/photo-1517935706615-2717063c2225?w=1920&auto=format&fit=crop&q=80"
+          alt="Canadian flag and skyline"
+          fill
+          className="object-cover object-center"
+          priority
+        />
+        {/* Gradient overlay — keeps cards readable */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-950/90 via-indigo-950/85 to-slate-950/90" />
+        {/* Subtle dot pattern on top of overlay */}
+        <div className="absolute inset-0 pattern-dots-light" />
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-3">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">
               What We Can Do For You
             </h2>
-            <p className="text-slate-500 max-w-xl mx-auto">
+            <p className="text-blue-200 max-w-xl mx-auto">
               Comprehensive immigration and documentation services under one roof.
             </p>
           </div>
@@ -112,15 +125,15 @@ export default function HomePage() {
               return (
                 <div
                   key={s.title}
-                  className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg border border-slate-100 transition-all group hover:-translate-y-1"
+                  className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:bg-white/20 transition-all group hover:-translate-y-1 shadow-lg"
                 >
                   <div className={`w-12 h-12 rounded-xl ${s.color} flex items-center justify-center mb-4`}>
                     <Icon className="w-6 h-6" />
                   </div>
-                  <h3 className="font-bold text-slate-900 text-lg mb-2 group-hover:text-blue-700 transition-colors">
+                  <h3 className="font-bold text-white text-lg mb-2">
                     {s.title}
                   </h3>
-                  <p className="text-slate-500 text-sm leading-relaxed">{s.desc}</p>
+                  <p className="text-blue-200 text-sm leading-relaxed">{s.desc}</p>
                 </div>
               );
             })}
@@ -128,7 +141,7 @@ export default function HomePage() {
           <div className="text-center mt-10">
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 bg-blue-700 hover:bg-blue-800 text-white font-semibold px-8 py-3.5 rounded-full shadow-sm transition-all"
+              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-3.5 rounded-full shadow-lg shadow-orange-500/30 transition-all"
             >
               Explore All Services →
             </Link>
