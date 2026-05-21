@@ -20,3 +20,29 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+/* Dot grid pattern for sections */
+.pattern-dots {
+  background-image: radial-gradient(circle, rgba(99, 102, 241, 0.18) 1.5px, transparent 1.5px);
+  background-size: 22px 22px;
+}
+
+/* Light dot pattern for dark sections */
+.pattern-dots-light {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1.5px, transparent 1.5px);
+  background-size: 22px 22px;
+}
+
+/* Hero overlay dot pattern */
+.hero-pattern {
+  background-image: radial-gradient(circle at 1.5px 1.5px, rgba(255, 255, 255, 0.12) 1.5px, transparent 0);
+  background-size: 28px 28px;
+}
+
+/* Grid pattern */
+.pattern-grid {
+  background-image:
+    linear-gradient(to right, rgba(99, 102, 241, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(99, 102, 241, 0.07) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
