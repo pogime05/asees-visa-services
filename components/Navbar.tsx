@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Phone, Menu, X } from "lucide-react";
+import Logo from "@/components/Logo";
 
 const links = [
   { href: "/", label: "Home" },
@@ -32,15 +33,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-500/40 transition-shadow">
-              <span className="text-white font-black text-base leading-none">A</span>
-            </div>
-            <div className="leading-tight">
-              <p className="font-bold text-white text-sm">Asees Passport</p>
-              <p className="text-xs text-cyan-400 font-medium">&amp; Visa Services</p>
-            </div>
-          </Link>
+          <Logo />
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-1">
