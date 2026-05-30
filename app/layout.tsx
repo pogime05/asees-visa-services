@@ -1,10 +1,20 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const geist = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-jakarta",
+  weight: ["400", "500", "600", "700", "800"],
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  weight: ["400", "500", "600"],
+});
 
 export const metadata: Metadata = {
   title: "Asees Passport & Visa Services | Brampton, Ontario",
@@ -18,8 +28,8 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${geist.variable} h-full scroll-smooth`}>
-      <body className="min-h-full flex flex-col antialiased font-sans">
+    <html lang="en" className={`${jakarta.variable} ${inter.variable} h-full scroll-smooth`}>
+      <body className="min-h-full flex flex-col antialiased" style={{ fontFamily: "var(--font-inter), sans-serif" }}>
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

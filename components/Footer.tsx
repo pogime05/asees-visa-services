@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { MapPin, Phone, Clock, Star } from "lucide-react";
+import Logo from "@/components/Logo";
 
 export default function Footer() {
   return (
@@ -8,14 +9,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2.5 mb-5">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/20">
-                <span className="text-white font-black text-base">A</span>
-              </div>
-              <div className="leading-tight">
-                <p className="font-bold text-white text-sm">Asees Passport</p>
-                <p className="text-xs text-cyan-400 font-medium">&amp; Visa Services</p>
-              </div>
+            <div className="mb-5">
+              <Logo />
             </div>
             <p className="text-sm text-slate-500 leading-relaxed mb-5">
               Your trusted immigration partner in Brampton, Ontario. We make your Canadian journey smooth and stress-free.
